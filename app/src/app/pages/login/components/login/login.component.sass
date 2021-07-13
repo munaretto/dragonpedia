@@ -1,0 +1,63 @@
+@import '../../../../../variables'
+
+.container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr
+  gap: 0px 0px
+  grid-auto-flow: row
+  grid-template-areas: "login new"
+  width: 100%
+  height: 500px
+
+.login, .new
+  padding: 24px
+  display: flex
+  flex-flow: column
+  justify-content: flex-start
+  align-items: center
+
+.login
+  grid-area: login
+  border-radius: 20px 0px 0px 20px
+  background-image: linear-gradient(to bottom, #eb0927, #ee122e, #f11a35, #f4203b, #f72642)
+  color: $white
+.new
+  grid-area: new
+  border-radius: 0px 20px 20px 0px
+  background-color: $white
+  color: $primary
+
+.title
+  display: flex
+  align-items: center
+  justify-content: center
+
+  h1
+    font-size: 5rem
+    color: $primary
+    word-break: break-word
+
+
+.card-title
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+
+@media screen and (max-width: 760px)
+  .container
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 1fr
+    grid-template-areas: "login" "new"
+
+  .login
+    grid-area: login
+    border-radius: 20px 20px 0px 0px
+    background-image: linear-gradient(to bottom, #eb0927, #ee122e, #f11a35, #f4203b, #f72642)
+    color: $white
+  .new
+    grid-area: new
+    border-radius: 0px 0px 20px 20px
+    background-color: $white
+    color: $primary

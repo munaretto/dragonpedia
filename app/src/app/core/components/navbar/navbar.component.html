@@ -1,0 +1,35 @@
+<section *ngIf="!sidenavIsOpen" class="navbar-content main">
+  <img class="menu-icon-filter" (click)="onMenuClicked()" title="Abrir menu lateral"
+    alt="Ícone de menu sanduíche que ao ser clicado abre o menu lateral do site" src="assets/icons/menu_closed.svg">
+  <h1>Dragonpedia</h1>
+</section>
+
+<section *ngIf="sidenavIsOpen" class="sidenav slide-right">
+  <section class="navbar-content side">
+    <img (click)="onMenuClicked()" title="Fechar menu lateral"
+      alt="Ícone de menu sanduíche que ao ser clicado fecha o menu lateral do site" src="assets/icons/menu_open.svg">
+    <h1>Dragonpedia</h1>
+  </section>
+
+  <section class="sidenav-item">
+    <img src="assets/icons/add.svg">
+    <a href="/dragons/new">Adicionar dragão</a>
+  </section>
+
+  <section class="sidenav-item">
+    <img src="assets/icons/list.svg">
+    <a href="/dragons">Ver dragões</a>
+  </section>
+
+
+
+  <section class="logout">
+    <hr class="divider">
+    <section class="sidenav-item">
+      <img src="assets/icons/logout.svg">
+      <a href="/login">Logout</a>
+    </section>
+  </section>
+
+
+</section>
