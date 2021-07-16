@@ -52,7 +52,6 @@ export class EditDragonControllerComponent implements OnInit, OnDestroy {
     await this.dragonsService.editDragon(updatedDragon, this.routeId)
       .toPromise()
       .then((res : Dragon) => {
-        console.log(`Dragão de ID ${this.routeId} atualizado com sucesso!`);
         this.alertService.open({
           message: `Dragão de id ${this.routeId} atualizado`,
           type: 'SUCCESS'

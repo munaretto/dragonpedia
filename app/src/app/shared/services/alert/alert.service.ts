@@ -18,7 +18,6 @@ export class AlertService {
 
   open(config: AlertConfig) {
     const newObj = {...config, canOpen: true}
-    console.log("NEW OBJ: ", newObj);
     this.alertStatus.next(newObj);
   }
 

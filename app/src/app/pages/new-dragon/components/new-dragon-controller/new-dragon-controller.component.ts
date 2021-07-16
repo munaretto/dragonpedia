@@ -40,7 +40,7 @@ export class NewDragonControllerComponent implements OnInit {
         message: `Erro ao criar dragão`,
         type: 'ERROR'
       })
-      console.log("ERRO AO CRIAR DRAGÃO: ", err)
+      console.error("ERRO AO CRIAR DRAGÃO: ", err)
     })
   }
 

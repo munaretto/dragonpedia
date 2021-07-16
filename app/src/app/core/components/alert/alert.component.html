@@ -1,4 +1,4 @@
-<section class="container" (click)="onCardClicked()" *ngIf="alertData?.canOpen"
+<section (click)="onCardClicked()" *ngIf="alertData?.canOpen"
   [ngClass]="{'error': alertData?.type === 'ERROR','success': alertData?.type === 'SUCCESS'}"
   class="alert-wrapper slide-left">
     <img *ngIf="alertData?.type === 'SUCCESS'" src="assets/icons/success.svg" alt="">

@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
 
     await this.authService.newUser(credentials)
       .then(resp => {
-        console.log("USUARIO CRIADO COM SUCESSO: ", resp);
         this.alertService.open({
           message: 'Usuário criado!',
           type: 'SUCCESS'

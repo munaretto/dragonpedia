@@ -18,7 +18,6 @@ export class AlertComponent implements OnInit, OnDestroy {
   getAlertData() {
     this.subscription = this.alertService.alertStatus$.subscribe((data : AlertConfig | undefined) => {
       this.alertData = data as AlertConfig;
-      console.log("PASSANDO");
     })
   }
 

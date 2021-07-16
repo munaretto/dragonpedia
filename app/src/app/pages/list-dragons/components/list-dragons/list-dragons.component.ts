@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Dragon } from 'src/app/shared/interfaces/dragon';
+import { AlertService } from 'src/app/shared/services/alert/alert.service';
 import { DragonsService } from 'src/app/shared/services/dragons/dragons.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class ListDragonsComponent implements OnInit {
 
   constructor(
     private dragonsService: DragonsService,
-    private detectRef: ChangeDetectorRef
+    private detectRef: ChangeDetectorRef,
+    private alertService: AlertService
   ) {}
 
   ngOnInit() {
@@ -47,11 +49,18 @@ export class ListDragonsComponent implements OnInit {
       this.dragonsService.deleteDragon(id).toPromise()
         .then(resp => {
           this.dragons = this.dragons.filter((dragon: Dragon) => dragon.id !== id);
-          console.log("Dragão removido com sucesso");
           this.detectRef.detectChanges();
+          this.alertService.open({
+            type: 'SUCCESS',
+            message: `Dragão de id ${id} excluído!`
+          })
         })
         .catch(err => {
-          console.error("Erro ao remover dragão");
+          this.alertService.open({
+            type: 'ERROR',
+            message: `Erro ao excluir dragão`
+          })
+          console.error("Erro ao remover dragão. ", err);
       });
     }
   }
