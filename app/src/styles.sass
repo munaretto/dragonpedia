@@ -1,12 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import './variables'
 
+body, html
+  height: 100%
+
 body
   background-color: $background-lighter
   font-family: 'Poppins', sans-serif
   margin: 0
   padding: 0
   box-sizing: border-box
+  position: relative
+
+  h1,h2,h3,h4,h5
+    margin: 0
+    word-break: break-all
+    white-space: break-spaces
+    text-overflow: ellipsis
+    word-wrap: break-word
 
   h1
     font-size: 1.7rem
@@ -14,12 +25,18 @@ body
   h2
     font-size: 1.5rem
 
-  p, a
+  h3
     font-size: 1.3rem
+
+  p, a
+    font-size: 1.1rem
 
   h4
     font-size: 1rem
     font-weight: 400
+
+  p
+    word-break: break-all
 
   a
     text-decoration: none
@@ -27,3 +44,36 @@ body
 
   a:hover
     font-weight: 500
+
+.formControl
+  display: flex
+  flex-flow: column
+
+  input
+    background-color: $white !important
+    border: 2px solid $background-light
+    border-radius: 5px
+    height: 18px
+    padding: 8px
+
+  label
+    margin-bottom: 8px
+
+.button
+  height: 38px
+  border-radius: 5px
+  padding: 8px
+  font-weight: 800
+
+.primary
+  background-color: $primary
+  border: 2px solid $primary
+  color: $white
+
+.secondary
+  background-color: $primary
+  border: 2px solid $white
+  color: $white
+
+.content
+  padding-top: 32px

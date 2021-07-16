@@ -9,11 +9,24 @@
       <h3>Faça login e acesse a Dragonpedia!</h3>
     </section>
 
-    <form>
+    <form [formGroup]="loginForm">
+      <section class="formControl spacer-bottom">
+        <label>Usuário</label>
+        <input type="text" formControlName="username">
+      </section>
 
+      <section class="formControl spacer-bottom">
+        <label>Senha</label>
+        <input type="password" formControlName="password">
+      </section>
     </form>
 
+    <section class="spacer-top">
+      <button class="button secondary" (click)="onLoginSubmit()">Fazer login</button>
+    </section>
   </section>
+
+
 
   <section class="new">
     <section class="card-title">
@@ -21,8 +34,20 @@
       <h3>Insira suas credenciais e cria sua conta na Dragonpedia!</h3>
     </section>
 
-    <form>
+    <form [formGroup]="newAccountForm">
+      <section class="formControl spacer-bottom">
+        <label>Usuário</label>
+        <input type="text" formControlName="username">
+      </section>
 
+      <section class="formControl spacer-bottom">
+        <label>Senha</label>
+        <input type="password" formControlName="password">
+      </section>
     </form>
+
+    <section class="spacer-top">
+      <button class="button primary" (click)="onLoginSubmit()">Criar conta</button>
+    </section>
   </section>
 </section>

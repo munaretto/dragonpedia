@@ -1,0 +1,11 @@
+<section class="card-container">
+  <section class="info">
+    <h3 title="{{dragon.name}}">{{dragon.name}}</h3>
+    <app-chip [content]="dragon.type"></app-chip>
+
+  </section>
+  <section class="action">
+    <img title="Editar dragão" src="/assets/icons/edit.svg" alt="Editar dragão">
+    <img (click)="openModal()" title="Excluir dragão" src="/assets/icons/delete.svg" alt="Excluir dragão">
+  </section>
+</section>

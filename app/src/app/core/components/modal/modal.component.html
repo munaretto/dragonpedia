@@ -1,0 +1,22 @@
+<!-- <section *ngIf="canShow" class="modal-content">
+
+</section> -->
+<ng-container *ngIf="canOpen">
+  <section class="backdrop">
+    <section class="modal-content">
+      <section class="container">
+        <section class="modal-title">
+          <h3>Confirmar exclusão</h3>
+        </section>
+        <section class="modal-description">
+          <p>Deseja excluir o dragão?</p>
+        </section>
+        <section class="modal-actions">
+          <button (click)="onConfirm()" class="button primary">Sim</button>
+          <button (click)="onDecline()" class="button primary">Não</button>
+        </section>
+      </section>
+
+    </section>
+  </section>
+</ng-container>

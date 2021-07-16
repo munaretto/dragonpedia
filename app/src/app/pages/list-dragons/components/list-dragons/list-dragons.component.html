@@ -1,0 +1,10 @@
+<section class="content">
+  <h2>Dragões</h2>
+
+  <section class="dragons-list">
+    <app-dragon-card *ngFor="let dragon of dragons"
+      [dragon]="dragon"
+      (delete)="deleteDragon($event, dragon.id!)">
+    </app-dragon-card>
+  </section>
+</section>
