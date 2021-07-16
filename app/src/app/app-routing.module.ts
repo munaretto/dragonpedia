@@ -10,6 +10,14 @@ const routes: Routes = [
     path: 'dragons',
     loadChildren: () => import('./pages/list-dragons/list-dragons.module').then((m) => m.ListDragonsModule),
   },
+  {
+    path: 'dragons/new',
+    loadChildren: () => import('./pages/new-dragon/new-dragon.module').then((m) => m.NewDragonModule),
+  },
+  {
+    path: 'dragons/edit/:id',
+    loadChildren: () => import('./pages/edit-dragon/edit-dragon.module').then((m) => m.EditDragonModule),
+  },
 ];
 
 @NgModule({

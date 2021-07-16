@@ -1,0 +1,29 @@
+<section class="content-presenter">
+  <h2>{{config.title}}</h2>
+  <p>{{config.description}}<p>
+
+  <form [formGroup]="form" class="container">
+    <section class="name">
+      <section class="formControl spacer-bottom">
+        <label>Nome</label>
+        <input type="text" formControlName="name">
+      </section>
+    </section>
+    <section class="type">
+      <section class="formControl spacer-bottom">
+        <label>Tipo</label>
+        <input type="text" formControlName="type">
+      </section>
+    </section>
+    <section class="histories">
+      <section class="formControl spacer-bottom">
+        <label>Estórias</label>
+        <textarea type="text" formControlName="histories"></textarea>
+      </section>
+    </section>
+  </form>
+
+  <section class="actions-presenter">
+    <button title="Salvar alterações" (click)="onActionClicked()" [disabled]="form.invalid" class="button primary">Salvar</button>
+  </section>
+</section>

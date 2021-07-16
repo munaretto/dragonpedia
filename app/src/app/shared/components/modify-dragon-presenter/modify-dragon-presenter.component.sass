@@ -1,0 +1,32 @@
+.content-presenter
+  padding-top: 32px
+
+.container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: .2fr 1fr
+  gap: 24px 24px
+  grid-auto-flow: row
+  grid-template-areas: "name type" "histories histories"
+  margin-top: 32px
+
+.histories
+ grid-area: histories
+
+.name
+ grid-area: name
+
+.type
+ grid-area: type
+
+@media screen and (max-width: 500px)
+  .container
+    grid-template-columns: 1fr
+    grid-template-rows: .1fr .1fr 1fr
+    gap: 24px 0px
+    grid-template-areas: "name" "type" "histories"
+
+.actions-presenter
+  margin-top: 32px
+  display: flex
+  justify-content: flex-end
