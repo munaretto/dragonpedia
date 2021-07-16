@@ -5,7 +5,7 @@
 
   </section>
   <section class="action">
-    <img title="Editar dragão" src="/assets/icons/edit.svg" alt="Editar dragão">
+    <img [routerLink]="['/dragons/edit/', dragon.id]" title="Editar dragão" src="/assets/icons/edit.svg" alt="Editar dragão">
     <img (click)="openModal()" title="Excluir dragão" src="/assets/icons/delete.svg" alt="Excluir dragão">
   </section>
 </section>

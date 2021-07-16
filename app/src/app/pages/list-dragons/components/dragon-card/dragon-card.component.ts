@@ -24,10 +24,7 @@ export class DragonCardComponent implements OnInit, RequesterComponent {
     };
   }
 
-  ngOnInit(): void {
-    console.log("DRAGON: ", this.dragon);
-
-  }
+  ngOnInit(): void {}
 
   openModal() {
     this.modalService.open(this);

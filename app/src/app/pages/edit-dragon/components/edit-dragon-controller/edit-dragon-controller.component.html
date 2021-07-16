@@ -1,1 +1,5 @@
-<app-modify-dragon-presenter [config]="config"></app-modify-dragon-presenter>
+<app-modify-dragon-presenter
+  *ngIf="dragon" [dragon]="dragon"
+  [config]="config"
+  (actionClicked)="onUpdateDragon($event)">
+</app-modify-dragon-presenter>
