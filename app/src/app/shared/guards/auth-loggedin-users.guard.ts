@@ -10,7 +10,11 @@ export class LoggedInUserAuthGuard implements CanActivate {
   }
 
   checkLogin() {
-    if (JSON.parse(localStorage.isLoggedIn)) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn')
+      ? JSON.parse(localStorage.isLoggedIn)
+      : false;
+
+    if (isLoggedIn) {
       this.router.navigate(['/dragons']);
       return false;
     } else {

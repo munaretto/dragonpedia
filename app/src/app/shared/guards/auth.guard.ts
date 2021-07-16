@@ -10,7 +10,11 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin() {
-    if (JSON.parse(localStorage.isLoggedIn)) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn')
+      ? JSON.parse(localStorage.isLoggedIn)
+      : false;
+
+    if (isLoggedIn) {
       return true;
     } else {
       this.router.navigate(['/login']);
