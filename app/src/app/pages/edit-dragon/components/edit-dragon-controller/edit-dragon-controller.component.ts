@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Dragon } from 'src/app/shared/interfaces/dragon';
 import { ModifyDragonPresenterConfig } from 'src/app/shared/interfaces/modify-dragon-presenter-config';
+import { AlertService } from 'src/app/shared/services/alert/alert.service';
 import { DragonsService } from 'src/app/shared/services/dragons/dragons.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class EditDragonControllerComponent implements OnInit, OnDestroy {
   routeId: string = '';
   dragon: Dragon | null = null;
 
-  constructor(private route: ActivatedRoute, private dragonsService: DragonsService, private detectRef: ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute, private dragonsService: DragonsService, private detectRef: ChangeDetectorRef, private alertService: AlertService) { }
 
   ngOnInit(): void {
     this.getRouteId();
@@ -52,9 +53,17 @@ export class EditDragonControllerComponent implements OnInit, OnDestroy {
       .toPromise()
       .then((res : Dragon) => {
         console.log(`Dragão de ID ${this.routeId} atualizado com sucesso!`);
+        this.alertService.open({
+          message: `Dragão de id ${this.routeId} atualizado`,
+          type: 'SUCCESS'
+        })
       })
       .catch(err => {
         console.error(`Erro ao atualizar dragão de id ${this.routeId}.`, err)
+        this.alertService.open({
+          message: `Erro ao atualizar dragão`,
+          type: 'ERROR'
+        })
       });
   }
 

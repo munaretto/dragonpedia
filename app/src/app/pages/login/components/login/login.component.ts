@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from 'src/app/shared/services/alert/alert.service';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
@@ -19,17 +20,28 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required]
   })
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private alertService: AlertService) {}
 
   ngOnInit(): void {}
 
-  async onLoginSubmit() {
+  onLoginSubmit() {
     const credentials = {
       username: this.loginForm.get('username')!.value,
       password: this.loginForm.get('password')!.value
     }
 
-    await this.authService.login(credentials).catch(err => {
+    this.authService.login(credentials)
+    .then(res => {
+      this.alertService.open({
+        message: 'Login efetuado!',
+        type: 'SUCCESS'
+      })
+    })
+    .catch(err => {
+      this.alertService.open({
+        message: err.message,
+        type: 'ERROR'
+      })
       console.error("ERRO AO FAZER LOGIN: ", err)
     });
   }
@@ -43,8 +55,16 @@ export class LoginComponent implements OnInit {
     await this.authService.newUser(credentials)
       .then(resp => {
         console.log("USUARIO CRIADO COM SUCESSO: ", resp);
+        this.alertService.open({
+          message: 'Usuário criado!',
+          type: 'SUCCESS'
+        })
       })
       .catch(err => {
+        this.alertService.open({
+          message: err.message,
+          type: 'ERROR'
+        })
         console.error("ERRO AO CRIAR USUARIOS: ", err)
       }
     );
