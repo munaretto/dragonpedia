@@ -1,0 +1,23 @@
+<section class="dragon-info">
+  <h2>Detalhes do dragão</h2>
+
+  <section class="container">
+    <section>
+      <label for="nome">Nome do dragão</label>
+      <h3>{{dragon?.name}}</h3>
+    </section>
+
+    <section class="content-section">
+      <label for="tipo">Tipo</label>
+      <app-chip [content]="dragon?.type"></app-chip>
+    </section>
+
+    <section class="content-section">
+      <label for="tipo">Data de criação</label>
+      <h4>{{dragon?.createdAt | date: 'dd/MM/yyyy'}}</h4>
+    </section>
+
+
+
+  </section>
+</section>

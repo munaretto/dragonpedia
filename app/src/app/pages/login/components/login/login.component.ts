@@ -23,15 +23,33 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onLoginSubmit() {
-
+  async onLoginSubmit() {
     const credentials = {
       username: this.loginForm.get('username')!.value,
       password: this.loginForm.get('password')!.value
     }
 
-    this.authService.login(credentials);
-
+    await this.authService.login(credentials).catch(err => {
+      console.error("ERRO AO FAZER LOGIN: ", err)
+    });
   }
+
+  async onCreateUser() {
+    const credentials = {
+      username: this.newAccountForm.get('username')!.value,
+      password: this.newAccountForm.get('password')!.value
+    }
+
+    await this.authService.newUser(credentials)
+      .then(resp => {
+        console.log("USUARIO CRIADO COM SUCESSO: ", resp);
+      })
+      .catch(err => {
+        console.error("ERRO AO CRIAR USUARIOS: ", err)
+      }
+    );
+  }
+
+
 
 }

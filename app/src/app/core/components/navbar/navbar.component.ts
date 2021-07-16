@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,17 @@ export class NavbarComponent implements OnInit {
 
   sidenavIsOpen: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   onMenuClicked() {
     this.sidenavIsOpen = !this.sidenavIsOpen;
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 }

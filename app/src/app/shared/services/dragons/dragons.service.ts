@@ -28,8 +28,6 @@ export class DragonsService {
   }
 
   deleteDragon(id: string) : Observable<Dragon>{
-    console.log("DELETING");
-
     return this.httpClient.delete(`${environment.apiUrl}/${id}`) as Observable<Dragon>;
   }
 }

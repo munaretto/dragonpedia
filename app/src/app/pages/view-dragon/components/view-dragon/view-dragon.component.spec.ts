@@ -1,22 +1,23 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { NewDragonControllerComponent } from './new-dragon-controller.component';
+import { ViewDragonComponent } from './view-dragon.component';
 
-describe('NewDragonControllerComponent', () => {
-  let component: NewDragonControllerComponent;
-  let fixture: ComponentFixture<NewDragonControllerComponent>;
+describe('ViewDragonComponent', () => {
+  let component: ViewDragonComponent;
+  let fixture: ComponentFixture<ViewDragonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewDragonControllerComponent ],
-      imports: [HttpClientTestingModule]
+      declarations: [ ViewDragonComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewDragonControllerComponent);
+    fixture = TestBed.createComponent(ViewDragonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

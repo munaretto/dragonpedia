@@ -45,9 +45,6 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
 
-  ngOnDestroy() {
-    console.log("DESTROYING MODAL");
-
-  }
+  ngOnDestroy() {}
 
 }

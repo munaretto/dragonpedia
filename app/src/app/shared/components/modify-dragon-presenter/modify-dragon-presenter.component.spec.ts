@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ModifyDragonPresenterComponent } from './modify-dragon-presenter.component';
 
@@ -8,7 +9,8 @@ describe('ModifyDragonPresenterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModifyDragonPresenterComponent ]
+      declarations: [ ModifyDragonPresenterComponent ],
+      imports: [ReactiveFormsModule]
     })
     .compileComponents();
   });

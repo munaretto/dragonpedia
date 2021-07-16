@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  cryptoKey: 'TiwRW4YyFyUwHy5x0oMwog==',
   apiUrl: 'http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon'
 };
 

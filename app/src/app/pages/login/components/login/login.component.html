@@ -1,53 +1,54 @@
-<section class="title">
-  <h1>Dragonpedia</h1>
-</section>
+<section class="wrapper">
+  <section class="title">
+    <h1>Dragonpedia</h1>
+  </section>
 
-<section class="container">
-  <section class="login">
-    <section class="card-title">
-      <h2>Vem sempre aqui?</h2>
-      <h3>Faça login e acesse a Dragonpedia!</h3>
+  <section class="container">
+    <section class="login">
+      <section class="card-title">
+        <h2>Faça login</h2>
+      </section>
+
+      <form [formGroup]="loginForm">
+        <section class="formControl spacer-bottom">
+          <label>Usuário</label>
+          <input type="text" formControlName="username">
+        </section>
+
+        <section class="formControl spacer-bottom">
+          <label>Senha</label>
+          <input type="password" formControlName="password">
+        </section>
+      </form>
+
+      <section class="spacer-top">
+        <button class="button secondary" (click)="onLoginSubmit()">Fazer login</button>
+      </section>
     </section>
 
-    <form [formGroup]="loginForm">
-      <section class="formControl spacer-bottom">
-        <label>Usuário</label>
-        <input type="text" formControlName="username">
+
+
+    <section class="new">
+      <section class="card-title">
+        <h2>Crie sua conta</h2>
       </section>
 
-      <section class="formControl spacer-bottom">
-        <label>Senha</label>
-        <input type="password" formControlName="password">
-      </section>
-    </form>
+      <form [formGroup]="newAccountForm">
+        <section class="formControl spacer-bottom">
+          <label>Usuário</label>
+          <input type="text" formControlName="username">
+        </section>
 
-    <section class="spacer-top">
-      <button class="button secondary" (click)="onLoginSubmit()">Fazer login</button>
+        <section class="formControl spacer-bottom">
+          <label>Senha</label>
+          <input type="password" formControlName="password">
+        </section>
+      </form>
+
+      <section class="spacer-top">
+        <button class="button primary" (click)="onCreateUser()">Criar conta</button>
+      </section>
     </section>
   </section>
 
-
-
-  <section class="new">
-    <section class="card-title">
-      <h2>Crie sua conta</h2>
-      <h3>Insira suas credenciais e cria sua conta na Dragonpedia!</h3>
-    </section>
-
-    <form [formGroup]="newAccountForm">
-      <section class="formControl spacer-bottom">
-        <label>Usuário</label>
-        <input type="text" formControlName="username">
-      </section>
-
-      <section class="formControl spacer-bottom">
-        <label>Senha</label>
-        <input type="password" formControlName="password">
-      </section>
-    </form>
-
-    <section class="spacer-top">
-      <button class="button primary" (click)="onLoginSubmit()">Criar conta</button>
-    </section>
-  </section>
 </section>
